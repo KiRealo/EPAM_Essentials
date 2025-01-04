@@ -1,0 +1,12 @@
+$dice= New-Object Dice -ArgumentList @(10, 20)
+
+Pow
+. ./Pow.ps1
+$otvet=New-Object Pow -ArgumentList @(5,2)
+$otvet.Piw()
+
+SetPrint
+
+$test=[SetPrint]::new() 
+$test.SetString("someText")
+$test.PrintString() 
