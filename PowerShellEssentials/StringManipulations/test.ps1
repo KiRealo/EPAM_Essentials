@@ -5,4 +5,3 @@ $var=$var -replace '(?<=[_-]).', {"$_".ToUpper()}
 $res=$var.Split([char[]]@('-', '_'))
 
 $res=-join $res 
-Write-Output $res
