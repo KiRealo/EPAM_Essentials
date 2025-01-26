@@ -1,47 +1,32 @@
-$processes=[System.Diagnostics.Process]::GetProcesses() | Select-Object -First 100 | ForEach-Object {
-    if($_.Id -and $_.ProcessName ){
-    [PSCustomObject]@{ 
-        PID= $_.Id
-        ProcessName = $_.ProcessName } 
-    }
-}
-
-
-$services = systemctl list-units --type=service --no-pager | head -n 100 |
-Select-Object -Skip 1 | Select-Object -SkipLast 5 | 
-ForEach-Object {
-        $fields = $_ -split '\s{1,}'
-        if($fields[1] -and $fields[4]){
-        
-        [PSCustomObject]@{
-                ServiceName = $fields[1]  
-                Status      = $fields[4]  
-            }
-        }
-        
-}
-
-
-$answer=$services | ForEach-Object {
-    $serShortName=$_.ServiceName.Split('.')[0]
-    if ($serShortName){
-    $matchProc=$processes | Where-Object {$_.ProcessName -like "*$serShortName*"}
-    [PSCustomObject]@{
-        ServiceName = $_.ServiceName
-        Status = $_.Status
-        Processes = $matchProc
+$text=@"
+In the midway of this our mortal life,
+I found me in a gloomy wood, astray
+Gone from the path direct: and e’en to tell
+It were no easy task, how savage wild
+That forest, how robust and rough its growth,
+Which to remember only, my dismay
+Renews, in bitterness not far from death.
+Yet to discourse of what there good befell,
+All else will I relate discover’d there.
+How first I enter’d it I scarce can say,
+Such sleepy dullness in that instant weigh’d
+My senses down, when the true path I left,
+But when a mountain’s foot I reach’d, where clos’d
+The valley, that had pierc’d my heart with dread,
+I look’d aloft, and saw his shoulders broad
+Already vested with that planet’s beam,
+Who leads all wanderers safe through every way.
+"@
+$hashT=@{}
+$splitT=$text -split '[ ,:.\.\.\.\…]+'
+$splitT=$splitT.Trim()
+$splitT | ForEach-Object {
+    if(-not $hashT[$_]){
+    foreach($word in $splitT){
+        if($word -like $_){
+            $hashT[$_]+=1
         }
     }
 }
-
-# $services[1].ServiceName.Split('.')[0]
-$testProcAcpid = $processes | ForEach-Object {
-    if($_.ProcessName -like "*acpid*"){
-        Write-Output $_
-    }
 }
-$servicesNew=service --status-all
-$servicesNewList=$servicesNew | ForEach-Object {
-    $_ -split '\s{2,}' 
-}
-$servicesNewList[3]
+$hashT.GetEnumerator() | Sort-Object Value -Descending | Select-Object -First 10
