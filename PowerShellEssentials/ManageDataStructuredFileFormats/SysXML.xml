@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object Type="System.Management.Automation.PSCustomObject">
+    <Property Name="ProcessName" Type="System.String">systemd</Property>
+    <Property Name="Id" Type="System.Int32">1</Property>
+    <Property Name="StartTime" Type="System.DateTime">2/16/2025 6:46:33 PM</Property>
+    <Property Name="PM" Type="System.Int64">0</Property>
+  </Object>
+  <Object Type="System.Management.Automation.PSCustomObject">
+    <Property Name="ProcessName" Type="System.String">systemd</Property>
+    <Property Name="Id" Type="System.Int32">1560</Property>
+    <Property Name="StartTime" Type="System.DateTime">2/16/2025 6:48:10 PM</Property>
+    <Property Name="PM" Type="System.Int64">0</Property>
+  </Object>
+  <Object Type="System.Management.Automation.PSCustomObject">
+    <Property Name="ProcessName" Type="System.String">systemd-journald</Property>
+    <Property Name="Id" Type="System.Int32">246</Property>
+    <Property Name="StartTime" Type="System.DateTime">2/16/2025 6:46:43 PM</Property>
+    <Property Name="PM" Type="System.Int64">0</Property>
+  </Object>
+  <Object Type="System.Management.Automation.PSCustomObject">
+    <Property Name="ProcessName" Type="System.String">systemd-logind</Property>
+    <Property Name="Id" Type="System.Int32">696</Property>
+    <Property Name="StartTime" Type="System.DateTime">2/16/2025 6:47:12 PM</Property>
+    <Property Name="PM" Type="System.Int64">0</Property>
+  </Object>
+  <Object Type="System.Management.Automation.PSCustomObject">
+    <Property Name="ProcessName" Type="System.String">systemd-resolved</Property>
+    <Property Name="Id" Type="System.Int32">669</Property>
+    <Property Name="StartTime" Type="System.DateTime">2/16/2025 6:47:11 PM</Property>
+    <Property Name="PM" Type="System.Int64">0</Property>
+  </Object>
+  <Object Type="System.Management.Automation.PSCustomObject">
+    <Property Name="ProcessName" Type="System.String">systemd-timesyncd</Property>
+    <Property Name="Id" Type="System.Int32">670</Property>
+    <Property Name="StartTime" Type="System.DateTime">2/16/2025 6:47:11 PM</Property>
+    <Property Name="PM" Type="System.Int64">0</Property>
+  </Object>
+  <Object Type="System.Management.Automation.PSCustomObject">
+    <Property Name="ProcessName" Type="System.String">systemd-udevd</Property>
+    <Property Name="Id" Type="System.Int32">275</Property>
+    <Property Name="StartTime" Type="System.DateTime">2/16/2025 6:46:44 PM</Property>
+    <Property Name="PM" Type="System.Int64">0</Property>
+  </Object>
+</Objects>

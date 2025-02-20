@@ -1,10 +1,15 @@
 Import-Module PowerShell-yaml
-$listOfShit=Get-Process | Where-Object {$_.ProcessName -match "systemd"} | Select-Object ProcessName, Id, StartTime, PM 
-$listOfShit | ConvertTo-Csv | Add-Content -Path ./SysCSV.csv #CSV
-$listOfShit | ConvertTo-Json | Add-Content -Path ./SysJSON.json #JSON
-$xmlShit=[xml]$( $listOfShit | ConvertTo-Xml -Depth 2)
-$path=Join-Path -Path (Resolve-Path ./).Path -ChildPath "SysXML.xml" 
-$xmlShit.Save($path)
-$hashOfShit=foreach($shit in $listOfShit){@{$listOfShit.IndexOf($shit)=@{ProcessName=$shit.ProcessName; Id=$shit.Id; StartTime=$shit.StartTime; PM=$shit.PM}}}
-$pathYAML=Join-Path -Path (Resolve-Path ./).Path -ChildPath "SysYAML.yaml"
-ConvertTo-Yaml -Data $hashOfShit -OutFile $pathYAML
+$CSVshit=Get-Content -Path ./SysCSV.csv | ConvertFrom-Csv
+$csvHASHshit=foreach($shit in $CSVshit){@{$shit.Id=@{ProcessName=$shit.ProcessName; Id=$shit.Id; StartTime=$shit.StartTime; PM=$shit.PM}}}
+
+$JSONshit=Get-Content -Path ./SysJSON.json | ConvertFrom-Json
+$jsonHASHshit=foreach($shit in $JSONshit){@{$shit.Id=@{ProcessName=$shit.ProcessName;StartTime=$shit.StartTime; PM=$shit.PM}}}
+
+$XMLshit=New-Object System.Xml.XmlDocument
+$XMLpath=Join-Path -Path (Resolve-Path ./).Path -ChildPath "./SysXML.xml"
+$XMLshit.Load($XMLpath)
+
+
+$YAMLshit= ConvertFrom-Yaml -Yaml $($(Get-Content ./SysYAML.yaml) -join "`n")
+# Get-Content ./SysYAML.yaml -Raw | ConvertFrom-Yaml
+$YAMLshit

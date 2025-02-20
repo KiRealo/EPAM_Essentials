@@ -1,0 +1,44 @@
+[
+  {
+    "ProcessName": "systemd",
+    "Id": 1,
+    "StartTime": "2025-02-16T18:46:33.5520441+02:00",
+    "PM": 0
+  },
+  {
+    "ProcessName": "systemd",
+    "Id": 1560,
+    "StartTime": "2025-02-16T18:48:10.6920441+02:00",
+    "PM": 0
+  },
+  {
+    "ProcessName": "systemd-journald",
+    "Id": 246,
+    "StartTime": "2025-02-16T18:46:43.2620441+02:00",
+    "PM": 0
+  },
+  {
+    "ProcessName": "systemd-logind",
+    "Id": 696,
+    "StartTime": "2025-02-16T18:47:12.0420441+02:00",
+    "PM": 0
+  },
+  {
+    "ProcessName": "systemd-resolved",
+    "Id": 669,
+    "StartTime": "2025-02-16T18:47:11.242044+02:00",
+    "PM": 0
+  },
+  {
+    "ProcessName": "systemd-timesyncd",
+    "Id": 670,
+    "StartTime": "2025-02-16T18:47:11.2520441+02:00",
+    "PM": 0
+  },
+  {
+    "ProcessName": "systemd-udevd",
+    "Id": 275,
+    "StartTime": "2025-02-16T18:46:44.4820441+02:00",
+    "PM": 0
+  }
+]

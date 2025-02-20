@@ -1,0 +1,35 @@
+- 0:
+    StartTime: 2025-02-16T18:46:33.5520441+02:00
+    Id: 1
+    ProcessName: systemd
+    PM: 0
+- 1:
+    StartTime: 2025-02-16T18:48:10.6920441+02:00
+    Id: 1560
+    ProcessName: systemd
+    PM: 0
+- 2:
+    StartTime: 2025-02-16T18:46:43.2620441+02:00
+    Id: 246
+    ProcessName: systemd-journald
+    PM: 0
+- 3:
+    StartTime: 2025-02-16T18:47:12.0420441+02:00
+    Id: 696
+    ProcessName: systemd-logind
+    PM: 0
+- 4:
+    StartTime: 2025-02-16T18:47:11.2420440+02:00
+    Id: 669
+    ProcessName: systemd-resolved
+    PM: 0
+- 5:
+    StartTime: 2025-02-16T18:47:11.2520441+02:00
+    Id: 670
+    ProcessName: systemd-timesyncd
+    PM: 0
+- 6:
+    StartTime: 2025-02-16T18:46:44.4820441+02:00
+    Id: 275
+    ProcessName: systemd-udevd
+    PM: 0
