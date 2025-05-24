@@ -1,0 +1,5 @@
+. repeat.sh > /dev/null 2> stderr.txt
+
+AND AFTER WRITE NAME OF OUTPUT FILE
+
+Cya
